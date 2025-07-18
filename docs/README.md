@@ -28,7 +28,12 @@ Status	docker ps
 Weekly Projects
 See `/weekly-projects` folder.
 
-
+How to Push
+```
+git add . 
+git commit -m "Your commit message here"
+git push origin main
+```
 
 
 
