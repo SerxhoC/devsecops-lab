@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  zap:
+    image: owasp/zap2docker-stable
+    container_name: zap
+    ports:
+      - "8080:8080"
+    command: ["zap.sh", "-daemon", "-port", "8080", "-host", "0.0.0.0"]
+
+  openvas:
+    image: mikesplain/openvas
+    container_name: openvas
+    ports:
+      - "9392:9392"
+    environment:
+      - PASSWORD=admin
+    restart: unless-stopped
+
+  smallstep-ca:
+    image: smallstep/step-ca
+    container_name: smallstep-ca
+    ports:
+      - "9000:9000"
+    environment:
+      - STEP_CA_PASS=password
+    volumes:
+      - ./tools/smallstep-ca:/home/step
