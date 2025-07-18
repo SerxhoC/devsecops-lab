@@ -19,8 +19,10 @@ GitHub (Docs + Reports)
 Trello (Task Tracking)
 
 How to Run
-```bash
-\# docker-compose up -d
+```
+Stop	docker compose down
+Start	docker compose up -d
+Status	docker ps
 ```
 
 Weekly Projects
